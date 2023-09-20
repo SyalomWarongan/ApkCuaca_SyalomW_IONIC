@@ -1,20 +1,64 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
     <ion-title>
-      Blank
+      + + Weather Forecast App + +
     </ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<div class = "main">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>INDONESIA</ion-card-title>
+      <ion-card-subtitle>North Sulawesi</ion-card-subtitle>
+    </ion-card-header>
+
+    <br>
+  
+    <ion-card-content>
+
+      <div class = "temp"> {{ res.main.temp | number: '1.0-0' }}° </div>
+
+      <div class = "icon">
+        <img src = "https://openweathermap.org/img/wn/{{ res.weather[0].icon }}@2x.png" alt = "">
+      </div>
+    
+      <div class = "desc"> {{ res.weather[0].description }} </div>
+      <span class = "city"> {{ res.name }} </span> <br> <br>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="6" size-md="6">
+        <ion-card>
+          <ion-card-title style="font-size: 1.3em;">HUMIDITY</ion-card-title>
+          <p>{{ res.main.humidity }}%</p>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xs="6" size-md="6">
+        <ion-card>
+          <ion-card-title style="font-size: 1.3em;">FEELS LIKE</ion-card-title>
+          <p>{{ res.main.feels_like }}°</p>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xs="6" size-md="6">
+        <ion-card>
+          <ion-card-title style="font-size: 1.3em;">PRESSURE</ion-card-title>
+          <p>{{ res.main.pressure }} mbar</p>
+        </ion-card>
+      </ion-col>
+      <ion-col size-xs="6" size-md="6">
+        <ion-card>
+          <ion-card-title style="font-size: 1.3em;">CLOUDS</ion-card-title>
+          <p>{{ res.clouds.all }}%</p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <footer class="foot">By: <br> Syalom Megumi Fortuna Warongan</footer>
+
+</div> 
+
 </ion-content>

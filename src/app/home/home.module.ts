@@ -6,6 +6,8 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
+import { DayPipe } from '../pipes/day.pipe';
+
 
 @NgModule({
   imports: [
@@ -14,6 +16,12 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage,
+  DayPipe,
+],
+
+  exports: [
+  DayPipe,
+  ]
 })
 export class HomePageModule {}
